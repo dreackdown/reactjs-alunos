@@ -50,7 +50,7 @@ namespace Alunos.API
                 });
 
             services.AddScoped<IAuthenticate, AuthenticateService>();
-            services.AddScoped<AlunosService>();
+            services.AddScoped<IAlunoService, AlunosService>();
             services.AddCors();
 
             services.AddControllers();
@@ -66,7 +66,9 @@ namespace Alunos.API
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "JWT Authorization header using the bearer scheme. \r\r\r Enter 'Bearer' [space] and then your token in the text input below. \r\n\r\nExample: \"Bearer 12345abcdef\"",
+                    Description = "JWT Authorization header using the bearer scheme." +
+                    " \r\r\r Enter 'Bearer' [space] and then your token in the text input below." +
+                    " \r\n\r\nExample: \"Bearer 12345abcdef\"",
                 });
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -76,8 +78,8 @@ namespace Alunos.API
                         {
                             Reference = new OpenApiReference
                             {
-                                Type=ReferenceType.SecurityScheme,
-                                Id="Bearer"
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
                             }
                         },
                         new string[] {}

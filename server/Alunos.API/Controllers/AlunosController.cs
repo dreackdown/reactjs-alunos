@@ -23,6 +23,8 @@ namespace Alunos.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<IAsyncEnumerable<Aluno>>> GetAlunos()
         {
             try
