@@ -1,10 +1,10 @@
 import { ChakraProvider } from '@chakra-ui/react'
-import { Login } from './components/Login/Login'
+import { Routes } from './routes'
 
 export const App = () => {
   return (
     <ChakraProvider>
-      <Login />
+      <Routes />
     </ChakraProvider>
   )
 }

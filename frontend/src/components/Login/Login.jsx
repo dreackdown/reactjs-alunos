@@ -1,21 +1,36 @@
-import { Flex, Heading } from '@chakra-ui/react'
+import { Flex, Heading, Checkbox, Link, Stack } from '@chakra-ui/react'
 import { EmailInput } from '../EmailInput/EmailInput.jsx'
-import { LoginButton } from '../LoginButton/LoginButton.jsx'
+import { Imagem } from '../Imagem/Imagem.jsx'
+import { Botao } from '../Botao/Botao'
 import { PasswordInput } from '../PasswordInput/PasswordInput.jsx'
 import { ToggleThemeButton } from '../ToggleThemeButton/ToggleThemeButton.jsx'
 
 export const Login = () => {
   return (
-    <>
-      <Flex align="center" justify="center" height="100vh">
-        <Flex direction="column" background="green." p={12} rounded={6}>
-          <Heading mb={6}>Log in</Heading>
-          <ToggleThemeButton />
+    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
+      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+        <Stack spacing={4} w={'full'} maxW={'md'}>
+          <Heading fontSize={'2xl'}>Cadastro de Alunos</Heading>
           <EmailInput />
           <PasswordInput />
-          <LoginButton />
-        </Flex>
+          <Stack spacing={6}>
+            <Stack
+              direction={{ base: 'column', sm: 'row' }}
+              align={'start'}
+              justify={'space-between'}
+            >
+              <Checkbox>Remember me</Checkbox>
+              <Link color={'blue.500'}>Forgot password?</Link>
+            </Stack>
+            <Botao mt="20px" colorScheme="teal" size="lg">
+              Log in
+            </Botao>
+          </Stack>
+        </Stack>
       </Flex>
-    </>
+      <Flex flex={1}>
+        <Imagem />
+      </Flex>
+    </Stack>
   )
 }
