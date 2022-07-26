@@ -1,11 +1,13 @@
-import { Flex, Heading, Checkbox, Link, Stack } from '@chakra-ui/react'
+import { Flex, Heading, Checkbox, Link, Stack, Button } from '@chakra-ui/react'
 import { EmailInput } from '../EmailInput/EmailInput.jsx'
 import { Imagem } from '../Imagem/Imagem.jsx'
 import { Botao } from '../Botao/Botao'
 import { PasswordInput } from '../PasswordInput/PasswordInput.jsx'
 import { ToggleThemeButton } from '../ToggleThemeButton/ToggleThemeButton.jsx'
+import { useAuth } from '../../Hooks/auth.jsx'
 
 export const Login = () => {
+  const { signin } = useAuth()
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -22,7 +24,17 @@ export const Login = () => {
               <Checkbox>Remember me</Checkbox>
               <Link color={'blue.500'}>Forgot password?</Link>
             </Stack>
-            <Botao mt="20px" colorScheme="teal" size="lg">
+            <Button
+              onClick={() =>
+                signin({
+                  email: 'mrhugogamer@gmail.com',
+                  password: 'Numsey#2022'
+                })
+              }
+            >
+              Logar
+            </Button>
+            <Botao mt="20px" colorScheme="teal" size="lg" onClick={signin}>
               Log in
             </Botao>
             <ToggleThemeButton />
