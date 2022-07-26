@@ -4,27 +4,32 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace Alunos.API.Migrations
 {
-    public partial class InicialIdentity : Migration
+    public partial class novo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "Alunos",
-                keyColumn: "Id",
-                keyValue: 1);
-
-            migrationBuilder.DeleteData(
-                table: "Alunos",
-                keyColumn: "Id",
-                keyValue: 2);
+            migrationBuilder.CreateTable(
+                name: "Alunos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(type: "varchar(80)", maxLength: 80, nullable: false),
+                    Email = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Idade = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Alunos", x => x.Id);
+                });
 
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(767)", nullable: false),
+                    Id = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -63,7 +68,7 @@ namespace Alunos.API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    RoleId = table.Column<string>(type: "varchar(767)", nullable: false),
+                    RoleId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     ClaimType = table.Column<string>(type: "text", nullable: true),
                     ClaimValue = table.Column<string>(type: "text", nullable: true)
                 },
@@ -84,7 +89,7 @@ namespace Alunos.API.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    UserId = table.Column<string>(type: "varchar(767)", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     ClaimType = table.Column<string>(type: "text", nullable: true),
                     ClaimValue = table.Column<string>(type: "text", nullable: true)
                 },
@@ -103,10 +108,10 @@ namespace Alunos.API.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "varchar(767)", nullable: false),
-                    ProviderKey = table.Column<string>(type: "varchar(767)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    ProviderKey = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "text", nullable: true),
-                    UserId = table.Column<string>(type: "varchar(767)", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -123,8 +128,8 @@ namespace Alunos.API.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "varchar(767)", nullable: false),
-                    RoleId = table.Column<string>(type: "varchar(767)", nullable: false)
+                    UserId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    RoleId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -147,9 +152,9 @@ namespace Alunos.API.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(type: "varchar(767)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "varchar(767)", nullable: false),
-                    Name = table.Column<string>(type: "varchar(767)", nullable: false),
+                    UserId = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    LoginProvider = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
+                    Name = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false),
                     Value = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -204,6 +209,9 @@ namespace Alunos.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Alunos");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
             migrationBuilder.DropTable(
@@ -223,16 +231,6 @@ namespace Alunos.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.InsertData(
-                table: "Alunos",
-                columns: new[] { "Id", "Email", "Idade", "Nome" },
-                values: new object[] { 1, "hugofaria157@live.com", 24, "Hugo Faria Lima" });
-
-            migrationBuilder.InsertData(
-                table: "Alunos",
-                columns: new[] { "Id", "Email", "Idade", "Nome" },
-                values: new object[] { 2, "eduardotk@gmail.com", 23, "Eduardo Takeushi" });
         }
     }
 }

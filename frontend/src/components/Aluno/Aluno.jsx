@@ -4,7 +4,16 @@ import { FiEdit, FiUserX } from 'react-icons/fi'
 
 export const Aluno = ({ nome, email, idade }) => {
   return (
-    <Flex justify="space-around" w="60%" alignItems="center" mt="20px">
+    <Flex
+      justify="space-around"
+      w="45%"
+      alignItems="center"
+      mt="20px"
+      bg="teal.500"
+      borderRadius={10}
+      p="10px"
+      color={'black'}
+    >
       <Flex direction="column">
         <Flex gap="5px">
           <Text as="b">Nome:</Text>
@@ -21,10 +30,10 @@ export const Aluno = ({ nome, email, idade }) => {
       </Flex>
       <Flex direction="column" gap="10px">
         <Botao>
-          <FiEdit size={25} color="#17202a" />
+          <FiEdit size={25} />
         </Botao>
         <Botao>
-          <FiUserX size={25} color="#17202a" />
+          <FiUserX size={25} />
         </Botao>
       </Flex>
     </Flex>

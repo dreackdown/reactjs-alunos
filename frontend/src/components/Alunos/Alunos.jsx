@@ -27,14 +27,16 @@ export const Alunos = () => {
       <Heading mt="20px" mb="20px">
         Relação de Alunos
       </Heading>
-      {data.map(aluno => (
-        <Aluno
-          key={aluno.id}
-          nome={aluno.nome}
-          email={aluno.email}
-          idade={aluno.idade}
-        />
-      ))}
+      <Flex justify="space-around">
+        {data.map(aluno => (
+          <Aluno
+            key={aluno.id}
+            nome={aluno.nome}
+            email={aluno.email}
+            idade={aluno.idade}
+          />
+        ))}
+      </Flex>
     </Flex>
   )
 }

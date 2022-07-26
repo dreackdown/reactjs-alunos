@@ -1,6 +1,7 @@
 import { FiClipboard } from 'react-icons/fi'
-import { Text, Link, CloseButton, Flex, Grid, GridItem } from '@chakra-ui/react'
+import { Text, CloseButton, Flex, Grid, GridItem } from '@chakra-ui/react'
 import { Botao } from '../Botao/Botao'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   return (
@@ -26,7 +27,7 @@ export const Header = () => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Link to="/aluno/novo" style={{ textDecoration: 'none' }}>
+          <Link to="aluno/novo/0" style={{ textDecoration: 'none' }}>
             <Botao w="250px" colorScheme="teal" size="lg" textDecoration="none">
               Novo Aluno
             </Botao>
