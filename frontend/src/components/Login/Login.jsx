@@ -25,6 +25,7 @@ export const Login = () => {
             <Botao mt="20px" colorScheme="teal" size="lg">
               Log in
             </Botao>
+            <ToggleThemeButton />
           </Stack>
         </Stack>
       </Flex>

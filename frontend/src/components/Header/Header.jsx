@@ -31,7 +31,7 @@ export const Header = () => {
               Novo Aluno
             </Botao>
           </Link>
-          <CloseButton />
+          <CloseButton size="lg" />
         </GridItem>
       </Grid>
     </Flex>

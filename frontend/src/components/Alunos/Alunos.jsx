@@ -21,19 +21,30 @@ export const Alunos = () => {
       <Heading mt="20px" mb="20px">
         Relação de Alunos
       </Heading>
-      <UnorderedList bg="#ffffff">
-        <ListItem style={{ listStyle: 'none' }}>
-          <Text as="b">Nome:</Text>Hugo Faria<br></br>
-          <Text as="b">Email:</Text>hugofaria157@live.com<br></br>
-          <Text as="b">Idade:</Text>24<br></br>
+      <Flex justify="space-around" w="50%" alignItems="center">
+        <Flex direction="column">
+          <Flex gap="5px">
+            <Text as="b">Nome:</Text>
+            <Text>Hugo Faria</Text>
+          </Flex>
+          <Flex gap="5px">
+            <Text as="b">Email:</Text>
+            <Text>hugofaria157@live.com</Text>
+          </Flex>
+          <Flex gap="5px">
+            <Text as="b">Idade:</Text>
+            <Text>24</Text>
+          </Flex>
+        </Flex>
+        <Flex direction="column" gap="10px">
           <Botao>
             <FiEdit size={25} color="#17202a" />
           </Botao>
           <Botao>
             <FiUserX size={25} color="#17202a" />
           </Botao>
-        </ListItem>
-      </UnorderedList>
+        </Flex>
+      </Flex>
     </Flex>
   )
 }
