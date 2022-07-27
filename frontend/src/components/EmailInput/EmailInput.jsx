@@ -1,15 +1,18 @@
 import { Input, FormControl } from '@chakra-ui/react'
 
-export const EmailInput = () => {
+export const EmailInput = props => {
+  const aoDigitado = e => {
+    props.aoAlterado(e.target.value)
+  }
   return (
-    <FormControl mt="20px">
-      <Input
-        placeholder="user@email.com"
-        type="email"
-        size="lg"
-        variant="filled"
-        mb={3}
-      />
-    </FormControl>
+    <Input
+      value={props.valor}
+      onChange={aoDigitado}
+      placeholder="user@email.com"
+      type="email"
+      size="lg"
+      variant="filled"
+      mb={4}
+    />
   )
 }

@@ -4,7 +4,7 @@ import { useState, createContext, useContext, useCallback } from 'react'
 const AuthContext = createContext()
 const AuthProvider = ({ children }) => {
   const [data, setData] = useState(() => {
-    const token = localStorage.getItem('@reactAlunos:token')
+    const token = localStorage.getItem('token')
     if (token) {
       api.defaults.headers.Authorization = `Bearer ${token}`
       return { token }
@@ -15,13 +15,17 @@ const AuthProvider = ({ children }) => {
   const signin = useCallback(async ({ email, password }) => {
     const response = await api.post('account/loginUser', { email, password })
     const { token } = response.data
-    localStorage.setItem('@reactAlunos:token', token)
+    const { expiration } = response.data
+    localStorage.setItem('email', email)
+    localStorage.setItem('token', token)
+    localStorage.setItem('expiration', expiration)
     api.defaults.headers.Authorization = `Bearer ${token}`
     setData({ token })
   }, [])
 
   const signout = useCallback(() => {
-    localStorage.removeItem('@reactAlunos:token')
+    localStorage.clear()
+    localStorage.removeItem('token')
     setData({})
   }, [])
 

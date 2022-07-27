@@ -1,10 +1,12 @@
-import { Flex, Text, Container, Input } from '@chakra-ui/react'
+import { Flex, Heading } from '@chakra-ui/react'
 import { FiUserPlus, FiCornerDownLeft } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Botao } from '../Botao/Botao'
 import { Campo } from '../Campo/Campo'
 
 export const NovoAluno = () => {
+  const { alunoId } = useParams()
+
   return (
     <Flex
       h="100vh"
@@ -26,9 +28,9 @@ export const NovoAluno = () => {
       >
         <Flex direction="column" alignItems="center" w="auto" gap="40px">
           <FiUserPlus size="105" />
-          <Text fontWeight="bold" fontSize="xl">
-            Novo Aluno
-          </Text>
+          <Heading as="h3" size="lg">
+            {alunoId === '0' ? 'Incluir Novo Aluno' : 'Atualizar Aluno'}
+          </Heading>
           <Link to="/alunos">
             <FiCornerDownLeft size="25" />
             Retornar
@@ -39,7 +41,7 @@ export const NovoAluno = () => {
           <Campo placeholder="Email" variant="filled" />
           <Campo placeholder="Idade" variant="filled" />
           <Botao w={'full'} type="submit">
-            Criar
+            {alunoId === '0' ? 'Incluir' : 'Atualizar'}
           </Botao>
         </Flex>
       </Flex>
