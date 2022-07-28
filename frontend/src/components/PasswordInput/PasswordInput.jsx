@@ -1,24 +1,24 @@
-import { Input, FormControl, Button } from '@chakra-ui/react'
+import { Input, Button } from '@chakra-ui/react'
 import { useState } from 'react'
 
-export const PasswordInput = props => {
+export const PasswordInput = ({ valor, aoAlterado }) => {
   const [show, setShow] = useState(false)
   const handleClick = () => setShow(!show)
 
   const aoDigitado = e => {
-    props.aoAlterado(e.target.value)
+    aoAlterado(e.target.value)
   }
 
   return (
     <>
       <Input
-        value={props.valor}
-        onChange={aoDigitado}
-        pr="4.5rem"
-        type={show ? 'text' : 'password'}
-        size="lg"
         placeholder="*******"
         variant="filled"
+        onChange={aoDigitado}
+        value={valor}
+        type={show ? 'text' : 'password'}
+        size="lg"
+        pr="4.5rem"
         mb={4}
       />
       <Button h="1.75rem" size="sm" onClick={handleClick}>

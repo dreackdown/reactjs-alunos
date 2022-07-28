@@ -7,7 +7,8 @@ export const Botao = ({
   mt,
   w,
   type,
-  variant
+  variant,
+  aoClicar
 }) => {
   return (
     <Button
@@ -15,6 +16,7 @@ export const Botao = ({
       w={w}
       mt={mt}
       size={size}
+      onClick={aoClicar}
       colorScheme={colorScheme}
       variant={variant}
     >

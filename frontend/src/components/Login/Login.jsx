@@ -1,25 +1,17 @@
-import {
-  Flex,
-  Heading,
-  Stack,
-  useColorMode,
-  IconButton
-} from '@chakra-ui/react'
+import { Flex, Heading, Stack } from '@chakra-ui/react'
 
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
-import { EmailInput } from '../EmailInput/EmailInput.jsx'
 import { Imagem } from '../Imagem/Imagem.jsx'
 import { Botao } from '../Botao/Botao'
 import { PasswordInput } from '../PasswordInput/PasswordInput.jsx'
 import { useAuth } from '../../Hooks/auth.jsx'
+import { Campo } from '../Campo/Campo.jsx'
 
 export const Login = () => {
   const [password, setPassword] = useState('')
   const [email, setEmail] = useState('')
 
-  const { colorMode, toggleColorMode } = useColorMode()
   const { signin } = useAuth()
   const history = useHistory()
 
@@ -38,14 +30,19 @@ export const Login = () => {
 
   return (
     <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <IconButton onClick={toggleColorMode}>
-        {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-      </IconButton>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <Heading fontSize={'2xl'}>Cadastro de Alunos</Heading>
           <form onSubmit={login}>
-            <EmailInput valor={email} aoAlterado={valor => setEmail(valor)} />
+            <Campo
+              valor={email}
+              aoAlterado={valor => setEmail(valor)}
+              placeholder="user@email.com"
+              type="email"
+              size="lg"
+              variant="filled"
+              mb={4}
+            />
             <PasswordInput
               valor={password}
               aoAlterado={valor => setPassword(valor)}
