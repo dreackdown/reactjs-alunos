@@ -9,7 +9,9 @@ export const Campo = ({
   aoAlterado,
   pr,
   mb,
-  size
+  w,
+  size,
+  focusBorderColor
 }) => {
   const aoDigitado = e => {
     aoAlterado(e.target.value)
@@ -23,8 +25,10 @@ export const Campo = ({
       onChange={aoDigitado}
       value={valor}
       pr={pr}
+      w={w}
       mb={mb}
       size={size}
+      focusBorderColor={focusBorderColor}
     >
       {children}
     </Input>

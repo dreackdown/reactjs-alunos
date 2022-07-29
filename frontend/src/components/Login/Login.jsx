@@ -2,7 +2,7 @@ import { Flex, Heading, Stack } from '@chakra-ui/react'
 
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { Imagem } from '../Imagem/Imagem.jsx'
+
 import { Botao } from '../Botao/Botao'
 import { PasswordInput } from '../PasswordInput/PasswordInput.jsx'
 import { useAuth } from '../../Hooks/auth.jsx'
@@ -29,8 +29,18 @@ export const Login = () => {
   }
 
   return (
-    <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
+    <Stack
+      minH={'100vh'}
+      direction={{ base: 'column', md: 'row' }}
+      bg="blackAlpha.600"
+    >
+      <Flex
+        p={8}
+        flex={1}
+        align={'center'}
+        justify={'center'}
+        bg="whiteAlpha.600"
+      >
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <Heading fontSize={'2xl'}>Cadastro de Alunos</Heading>
           <form onSubmit={login}>
@@ -48,15 +58,12 @@ export const Login = () => {
               aoAlterado={valor => setPassword(valor)}
             />
             <Stack spacing={6}>
-              <Botao mt="20px" colorScheme="teal" size="lg" type="submit">
+              <Botao mt="20px" colorScheme="blackAlpha" size="lg" type="submit">
                 Log in
               </Botao>
             </Stack>
           </form>
         </Stack>
-      </Flex>
-      <Flex flex={1}>
-        <Imagem />
       </Flex>
     </Stack>
   )

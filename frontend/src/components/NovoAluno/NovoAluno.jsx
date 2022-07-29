@@ -67,19 +67,19 @@ export const NovoAluno = () => {
       <Flex
         w="100%"
         p="75px"
-        bg="teal.500"
+        bg="blackAlpha.500"
         boxShadow="0 0 100px rgba(0,0,0,0.1)"
         borderRadius="8px"
         justify="space-between"
         align="center"
       >
         <Flex direction="column" alignItems="center" w="auto" gap="40px">
-          <FiUserPlus size="105" />
-          <Heading as="h3" size="lg">
+          <FiUserPlus color="black" size="105" />
+          <Heading as="h3" color="black" size="lg">
             {alunoId === '0' ? 'Incluir Novo Aluno' : 'Atualizar Aluno'}
           </Heading>
           <Link to="/alunos">
-            <FiCornerDownLeft size="25" />
+            <FiCornerDownLeft color="black" size="25" />
             Retornar
           </Link>
         </Flex>
@@ -104,7 +104,7 @@ export const NovoAluno = () => {
                 valor={idade}
                 aoAlterado={valor => setIdade(valor)}
               />
-              <Botao w={'full'} type="submit">
+              <Botao w={'full'} colorScheme="blackAlpha" type="submit">
                 {alunoId === '0' ? 'Incluir' : 'Atualizar'}
               </Botao>
             </Flex>

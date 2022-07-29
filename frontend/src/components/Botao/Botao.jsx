@@ -6,13 +6,16 @@ export const Botao = ({
   size,
   mt,
   w,
+  h,
   type,
   variant,
-  aoClicar
+  aoClicar,
+  tipo
 }) => {
   return (
     <Button
       type={type}
+      h={h}
       w={w}
       mt={mt}
       size={size}
