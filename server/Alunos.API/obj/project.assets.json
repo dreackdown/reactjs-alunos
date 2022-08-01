@@ -2256,23 +2256,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\hugof\\.nuget\\packages\\": {},
+    "C:\\Users\\Cia\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hugof\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\Alunos.API.csproj",
+      "projectUniqueName": "C:\\Users\\Cia\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\Alunos.API.csproj",
       "projectName": "Alunos.API",
-      "projectPath": "C:\\Users\\hugof\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\Alunos.API.csproj",
-      "packagesPath": "C:\\Users\\hugof\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hugof\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\obj\\",
+      "projectPath": "C:\\Users\\Cia\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\Alunos.API.csproj",
+      "packagesPath": "C:\\Users\\Cia\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Cia\\Documents\\projetos\\reactjs-alunos\\server\\Alunos.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\hugof\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Cia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

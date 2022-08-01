@@ -10,7 +10,7 @@ export const Botao = ({
   type,
   variant,
   aoClicar,
-  tipo
+  style
 }) => {
   return (
     <Button
@@ -22,6 +22,7 @@ export const Botao = ({
       onClick={aoClicar}
       colorScheme={colorScheme}
       variant={variant}
+      style={style}
     >
       {children}
     </Button>

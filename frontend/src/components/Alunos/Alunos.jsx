@@ -49,6 +49,17 @@ export const Alunos = () => {
     }
   }
 
+  // async function deleteAluno(id) {
+  //   try {
+  //     if (window.confirm(`Deseja realmente excluir o aluno?`)) {
+  //       await api.delete(`/alunos/${id}`)
+  //       setAlunos(alunos.filter(aluno => aluno._id !== id))
+  //     }
+  //   } catch (error) {
+  //     alert('Não foi possível deletar o Aluno')
+  //   }
+  // }
+
   async function logout() {
     try {
       await signout()

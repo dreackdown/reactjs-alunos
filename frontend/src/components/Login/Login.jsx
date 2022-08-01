@@ -1,4 +1,4 @@
-import { Flex, Heading, Stack } from '@chakra-ui/react'
+import { background, Flex, Heading, Stack } from '@chakra-ui/react'
 
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -32,7 +32,7 @@ export const Login = () => {
     <Stack
       minH={'100vh'}
       direction={{ base: 'column', md: 'row' }}
-      bg="blackAlpha.600"
+      bg="#4B9093"
     >
       <Flex
         p={8}
@@ -58,7 +58,12 @@ export const Login = () => {
               aoAlterado={valor => setPassword(valor)}
             />
             <Stack spacing={6}>
-              <Botao mt="20px" colorScheme="blackAlpha" size="lg" type="submit">
+              <Botao
+                mt="20px"
+                style={{ backgroundColor: '#F59A73' }}
+                size="lg"
+                type="submit"
+              >
                 Log in
               </Botao>
             </Stack>

@@ -21,7 +21,12 @@ export const PasswordInput = ({ valor, aoAlterado }) => {
         pr="4.5rem"
         mb={4}
       />
-      <Button h="1.75rem" size="sm" onClick={handleClick}>
+      <Button
+        h="1.75rem"
+        size="sm"
+        style={{ backgroundColor: '#F4F7F8' }}
+        onClick={handleClick}
+      >
         {show ? 'Hide' : 'Show'}
       </Button>
     </>
